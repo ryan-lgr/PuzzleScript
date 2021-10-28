@@ -1,0 +1,991 @@
+title FIRE & ICE CREAM
+author Diamond Knight
+homepage diamond-knight.itch.io/
+background_color black
+text_color lightgray
+noaction
+norepeat_action
+run_rules_on_level_start
+
+(Changelog:)
+(23 AUG 2020: Created Objects, Torches, Hot/Cold Mechanics, levels 1 - 8)
+(24 AUG 2020: Updated Object art, Created DemoBuild_0.1)
+(24 AUG 2020: Added Cauldron and Ice Cream)
+(25 AUG 2020: Tweaked Fire and Ice)
+(28 AUG 2020: Levels 9 to 12, Narrative)
+(29 AUG 2020: Added Prisoners, levels 13 - 17, Throne Room Intro/Outro, Epilogue)
+(30 AUG 2020: Insert Level 18 - 20, End Screen)
+(01 SEP 2020: Edited I Scream for Ice Cream, Back to Your Cells, Deja Vu, Rearranged Level 17 - 20)
+(06 SEP 2020: Edited Working the Forge)
+(08 SEP 2020: Added Protect the Torch, Keep them alive)
+(10 SEP 2020: Edited Don't Freeze)
+(18 SEP 2020: Edited Help me Friend)
+(20 SEP 2020: Edited Cornered, Escort Quest)
+
+========
+OBJECTS
+========
+
+Background
+#808080 #4d4d4d
+01000
+11111
+00010
+11111
+01000
+
+FuranceTopDown
+#ff3300 #e67300 Yellow #b3d9ff
+..0..
+.00.0
+01100
+01210
+.030.
+
+FreezerTopDown
+White #cce5ff #99caff #66b0ff #3396ff
+1.4.1
+.232.
+43034
+.232.
+1.4.1
+
+Marble
+White #f2f2f2 #e6e6e6 #d9d9d9 #cccccc #bfbfbf #b3b3b3 #a6a6a6 #999999 #8c8c8c
+.642.
+75102
+83214
+97356
+.987.
+
+MarbleIce
+#b3e7ff #99dfff #80d7ff #66cfff #4dc6ff #33beff #1ab6ff #00aeff #009de6 #008bcc
+.642.
+75102
+83214
+97356
+.987.
+
+MarbleShattered
+White White White White #b3e7ff #99dfff #80d7ff #66cfff #4dc6ff #33beff
+.64.2
+75..2
+8..14
+...56
+.987.
+
+MarbleFire
+#fff0e6 #ffe0cc #ffd1b3 #ffc299 #ffb380 #ffa366 #ff944d #ff8533 #ff751a #ff6600
+.642.
+75102
+83214
+97356
+.987.
+
+MarbleMolten
+#b30000 #ff3300
+.....
+.....
+.00..
+01100
+01110
+
+MarbleEscort
+#ffe6f2 #ffcce6 #ffb3d9 #ff99cc #ff80bf #ff66b3 #ff4da6 #ff3399 #ff1a8c #ff0080
+.642.
+75102
+83214
+97356
+.987.
+
+MarblePrisonerBlue
+#b3b3ff #9999ff #8080ff #000000 #4d4dff #3333ff #1a1aff #0000ff #ff5c33 #ff3300
+.642.
+75102
+98338
+98888
+.998.
+
+MarblePrisonerYellow
+#ffff99 #ffff80 #ffff66 #000000 #ffff33 #ffff1a #ffff00 #e6e600 #ff5c33 #ff3300
+.642.
+75102
+98338
+98888
+.998.
+
+MarblePrisonerGreen
+#99ff99 #80ff80 #66ff66 #000000 #33ff33 #1aff1a #00ff00 #00e600 #ff5c33 #ff3300
+.642.
+75102
+98338
+98888
+.998.
+
+MarblePrisonerSteel
+White #f2f2f2 #e6e6e6 #000000 #cccccc #bfbfbf #b3b3b3 #a6a6a6 #ff5c33 #ff3300
+.642.
+75102
+98338
+98888
+.988.
+
+PrisonBlue
+Grey #0000ff
+11111
+0.0.0
+0.0.0
+0.0.0
+11111
+
+
+PrisonYellow
+Grey #e6e600
+11111
+0.0.0
+0.0.0
+0.0.0
+11111
+
+PrisonGreen
+Grey #00e600
+11111
+0.0.0
+0.0.0
+0.0.0
+11111
+
+PrisonSteel
+Grey White
+11111
+0.0.0
+0.0.0
+0.0.0
+11111
+
+Torch
+Brown Darkbrown
+.....
+..1..
+..0..
+..0..
+..0..
+
+LitTorch
+Brown Darkbrown Red Orange
+..3..
+.333.
+.323.
+..0..
+..0..
+
+BurntTorch
+#cccccc
+.....
+.....
+.0...
+.00.0
+00000
+
+Cauldron
+Black Darkbrown
+.....
+..1..
+..0..
+0.0.0
+00000
+
+LitCauldron
+Black Yellow Red Orange
+.3...
+.33.3
+32233
+01110
+00000
+
+IceCream
+Brown White
+..11.
+.1111
+.0011
+.001.
+.0...
+
+IceCreamMelted
+Brown White
+.....
+.....
+.111.
+11011
+.0.1.
+
+Target
+#ffebcc
+.....
+..0..
+.0.0.
+..0..
+.....
+
+TargetEnabled
+#ffcc00
+.....
+..0..
+.0.0.
+..0..
+.....
+
+Wall
+#333333 Black
+01000
+11111
+00010
+11111
+01000
+
+InvisibleWall
+Transparent
+
+Step1T
+#808080 #4d4d4d #ffad33 #b36b00
+22222
+33333
+00010
+11111
+01000
+
+FloorRoyal
+Red Darkred
+01000
+00010
+00100
+10000
+00001
+
+Step1TRoyal
+Red Darkred #ffad33 #b36b00
+22222
+33333
+00100
+10000
+00001
+
+Step1L
+#808080 #4d4d4d #ffad33 #b36b00
+23000
+23111
+23010
+23111
+23000
+
+Step1LRoyal
+Red Darkred #ffad33 #b36b00
+23000
+23010
+23100
+23000
+23001
+
+Step1R
+#808080 #4d4d4d #ffad33 #b36b00
+01032
+11132
+00032
+11132
+01032
+
+Step1RRoyal
+Red Darkred #ffad33 #b36b00
+01032
+00032
+00132
+10032
+00032
+
+Step2LD
+#808080 #4d4d4d #ffad33 Red Darkred #b36b00
+23444
+22343
+52233
+15223
+01522
+
+Step2LDRoyal
+Red Darkred #ffad33 #b36b00
+21000
+22010
+32200
+13220
+00322
+
+Step2RD
+#808080 #4d4d4d #ffad33 Red Darkred #b36b00
+34332
+33322
+33225
+42251
+22500
+
+Step2RDRoyal
+Red DarkRed #ffad33 #b36b00
+01002
+00022
+00223
+12230
+22301
+
+Step1TL
+#808080 #4d4d4d #ffad33 #b36b00
+23000
+31111
+00010
+11111
+01000
+
+Step1TLRoyal
+Red Darkred #ffad33 #b36b00
+23000
+30010
+00100
+10000
+00001
+
+Step1TR
+#808080 #4d4d4d #ffad33 #b36b00
+01032
+11113
+00010
+11111
+01000
+
+Step1TRRoyal
+Red Darkred #ffad33 #b36b00
+01032
+00013
+00100
+10000
+00001
+
+KingTL
+#ffd699 #ffcc80 #ffc266 #ffb84d #ffad33 #ffa31a #ff9900 Red Darkred
+78777
+77732
+77431
+86521
+76510
+
+KingTC
+#ffffff #fff5e6 #ffebcc #ffe0b3 #ffd699
+43332
+33322
+33221
+32111
+43100
+
+KingTR
+#ffffff #fff5e6 #ffebcc #ffe0b3 #ffd699 #ffcc80 Red darkred
+67666
+33676
+23466
+13456
+01257
+
+KingCL
+#ffd699 #ffcc80 #ffc266 #ffb84d #ffad33 #ffa31a #ff9900 #e68a00 #cc7a00 #b36b00
+86420
+86420
+96420
+97531
+98542
+
+KingCC
+#ffffff #fff5e6 #ffebcc #ffe0b3 #ffd699 #ffcc80 #ffc266 #ffb84d
+43100
+43300
+54321
+65432
+76544
+
+KingCR
+#ffffff #fff5e6 #ffebcc #ffe0b3 #ffd699 #ffcc80 #ffc266 Red Darkred
+00456
+00145
+01345
+12446
+23566
+
+KingBL
+#ff9900 #e68a00 #cc7a00 #b36b00 Red Darkred
+42210
+43231
+44223
+54412
+44445
+
+KingBC
+#ffcc80 #ffc266 #ffb84d #ffad33 #ffa31a #ff9900 #e68a00 #cc7a00 #b36b00 Red
+54210
+65421
+76533
+88766
+78765
+
+KingBR
+#ffc266 #ffb84d #ffad33 #ffa31a #ff9900 Red Darkred
+01235
+12345
+23455
+34555
+55556
+
+=======
+LEGEND
+=======
+
+Player = Marble OR MarbleIce OR MarbleFire OR MarblePrisonerSteel
+Marbles = Marble OR MarbleIce OR MarbleFire OR MarbleShattered OR MarbleMolten OR MarbleEscort OR MarblePrisonerBlue OR MarblePrisonerYellow OR MarblePrisonerGreen
+Prisoners = MarblePrisonerBlue OR MarblePrisonerYellow OR MarblePrisonerGreen
+TargetRoyal = Target AND FloorRoyal
+Goal = Target OR TargetEnabled
+Pushable = Torch OR LitTorch OR MarblePrisonerBlue OR MarblePrisonerYellow OR MarblePrisonerGreen
+HotObject = MarbleFire OR LitTorch
+ColdObject = MarbleIce
+AllTorch = Torch OR LitTorch
+Prisons = PrisonBlue OR PrisonYellow OR PrisonGreen OR PrisonSteel
+PrisonBlueFull = MarblePrisonerBlue AND PrisonBlue
+PrisonYellowFull = MarblePrisonerYellow AND PrisonYellow
+PrisonGreenFull = MarblePrisonerGreen AND PrisonGreen
+PrisonSteelFull = MarblePrisonerSteel AND PrisonSteel
+Steps = FloorRoyal OR Step1T OR Step2LD OR Step2RD OR Step1TL OR Step1TR OR Step1L OR Step1R OR Step1TRoyal OR Step1LRoyal OR Step1RRoyal OR Step2LDRoyal OR Step2RDRoyal OR Step1TLRoyal OR Step1TRRoyal
+RoyalCauldron = LitCauldron AND FloorRoyal
+RoyalEscort = MarbleEscort AND FloorRoyal
+King = KingTL OR KingTC OR KingTR OR KingCL OR KingCC OR KingCR OR KingBL OR KingBC OR KingBR
+Obstructions = Wall OR InvisibleWall OR Cauldron OR LitCauldron OR King
+
+
+. = Background
+M = Marble
+E = RoyalEscort
+B = MarblePrisonerBlue
+Y = MarblePrisonerYellow
+G = MarblePrisonerGreen
+P = MarblePrisonerSteel
+* = PrisonBlue
+& = PrisonYellow
+% = PrisonGreen
+J = PrisonSteel
+$ = PrisonBlueFull
+@ = PrisonYellowFull
+! = PrisonGreenFull
+\ = PrisonSteelFull
+T = Torch
+L = LitTorch
+C = RoyalCauldron
+K = LitCauldron
+F = FuranceTopDown
+I = FreezerTopDown
+D = IceCream
+O = Target
+{ = TargetRoyal
+# = Wall
+/ = InvisibleWall
+1 = Step1T
+2 = Step1L
+3 = Step1R
+4 = Step2LD
+5 = Step2RD
+6 = Step1TL
+7 = Step1TR
+R = FloorRoyal
+; = Step1TRoyal
+: = Step1LRoyal
+" = Step1RRoyal
+' = Step2LDRoyal
+? = Step2RDRoyal
+_ = Step1TLRoyal
++ = Step1TRRoyal
+Q = KingTL
+W = KingTC
+A = KingTR
+S = KingCL
+Z = KingCC
+X = KingCR
+U = KingBL
+H = KingBC
+N = KingBR
+
+
+=======
+SOUNDS
+=======
+
+StartGame 234626
+Player Move 71782707
+Player CantMove 94624704
+Pushable MOVE 36772507
+AllTorch Move 7086908
+EndLevel 25377300
+
+(Marble Hot)
+sfx0 91134508
+(Marble Molten)
+sfx1 95534902
+(Marble Freeze)
+sfx2 21922108
+(Marble Shatter)
+sfx3 76147300
+(Torch Lit)
+sfx4 16302708
+(Torch Burnt)
+sfx5 37746704
+(Torch Unlit)
+sfx6 42265108
+(Collecting Ice Cream)
+sfx7 96975300
+
+================
+COLLISIONLAYERS
+================
+
+Background
+Steps
+FuranceTopDown, FreezerTopDown
+Player, Marbles, Pushable, Obstructions
+Prisons
+Goal
+BurntTorch
+IceCream, IceCreamMelted
+
+======
+RULES
+======
+
+(Movement Rules)
+[ > Player | AllTorch ] -> [ > Player | > AllTorch  ]
+[ > Player | Prisoners ] -> [ > Player | > Prisoners ]
+[ > Prisoners | AllTorch ] -> [ > Prisoners | > AllTorch ]
+
+(Furnace and Freezer on Marble State)
+late [ MarbleFire FuranceTopDown ] -> [MarbleMolten ] sfx1
+late [ Prisoners FuranceTopDown ] -> [MarbleMolten ] sfx1
+late [ Marble FuranceTopDown ] -> [MarbleFire FuranceTopDown ] sfx0
+late [ MarbleIce FreezerTopDown ] -> [MarbleShattered ] sfx3
+late [ Prisoners FreezerTopDown ] -> [MarbleShattered ] sfx3
+late [ Marble FreezerTopDown ] -> [MarbleIce FreezerTopDown]sfx2
+late [ MarbleFire FreezerTopDown ] -> [Marble FreezerTopDown ] sfx2
+late [ MarbleIce FuranceTopDown ] -> [Marble FuranceTopDown ] sfx0
+
+(Furnace and Freezer effect on Torches)
+late [ LitTorch FreezerTopDown ] -> [ Torch FreezerTopDown ] sfx5
+late [ FuranceTopDown AllTorch ] -> [ FuranceTopDown BurntTorch ] sfx5
+
+(Lit Torch lights adjacent Torch)
+late [ LitTorch | Torch ] -> [ LitTorch | LitTorch ] sfx4
+late [ LitTorch | Cauldron ] -> [ LitTorch | LitCauldron ] sfx4
+
+(Fire Marble lights torches, burns Lit Torches)
+late [ MarbleFire | LitTorch ] -> [ MarbleFire | BurntTorch ] sfx5
+late [ MarbleFire | Torch ] -> [ MarbleFire | LitTorch ] sfx4
+late [ MarbleIce | LitTorch ] -> [ MarbleIce | Torch ] sfx6
+
+(Effect of Heat on Ice Cream)
+late [ HotObject | IceCream ] -> [ HotObject | IceCreamMelted ] sfx5
+late [ HotObject IceCream ] -> [ HotObject IceCreamMelted ] sfx5
+late [ Marble IceCream ] -> [ Marble IceCreamMelted ] sfx5
+
+(Collecting Ice Cream)
+late [ MarbleIce IceCream ] -> [ MarbleIce ] sfx7
+
+(Target changes when win conditions are satisfied)
+late [ Target ] -> [ TargetEnabled ]
+late [ MarbleShattered ] [ TargetEnabled ]-> [ MarbleShattered ] [ Target ]
+late [ MarbleMolten ] [ TargetEnabled ]-> [ MarbleMolten ] [ Target ]
+late [ BurntTorch ] [ TargetEnabled ]-> [ BurntTorch ] [ Target ]
+late [ Torch ] [ TargetEnabled ]-> [ Torch ] [ Target ]
+late [ Cauldron ] [ TargetEnabled ]-> [ Torch ] [ Target ]
+late [ IceCream ] [ TargetEnabled ]-> [ IceCream ] [ Target ]
+late [ IceCreamMelted ] [ TargetEnabled ]-> [ IceCreamMelted ] [ Target ]
+late [ MarbleShattered ] [ TargetEnabled ]-> [ MarbleShattered ] [ Target ]
+late [ MarbleMolten ] [ TargetEnabled ] -> [ MarbleMolten ] [ Target ]
+late [ PrisonBlue no MarblePrisonerBlue ] [ TargetEnabled ] -> [ PrisonBlue no MarblePrisonerBlue ] [ Target ]
+late [ PrisonYellow no MarblePrisonerYellow ] [ TargetEnabled ] -> [ PrisonYellow no MarblePrisonerYellow ] [ Target ]
+late [ PrisonGreen no MarblePrisonerGreen ] [ TargetEnabled ] -> [ PrisonGreen no MarblePrisonerGreen ] [ Target ]
+
+
+==============
+WINCONDITIONS
+==============
+
+No Torch
+No BurntTorch
+No IceCream
+No IceCreamMelted
+No MarbleShattered
+No MarbleMolten
+No InvisibleWall
+All MarblePrisonerBlue on PrisonBlue
+All MarblePrisonerYellow on PrisonYellow
+All MarblePrisonerGreen on PrisonGreen
+All MarblePrisonerSteel on PrisonSteel
+All TargetEnabled on Player
+
+=======
+LEVELS
+=======
+
+(Torch Mechanics:)
+(Advantage - Can be moved around, lit by other torches)
+(Disadvantage - Fire Marble burns them when lit)
+
+(Cauldron Mechanics:)
+(Advantage - Cannot be destroyed by Fire Marble or put out by Ice Marble)
+(Disadvantage - Cannot be moved)
+
+(Standard Marble Mechanics:)
+(Advantage - Standard sokobon movement)
+(Disadvantage - No special talents)
+
+(Fire Marble Mechanics:)
+(Advantage - Lights torches when next to them)
+(Disadvantage - Burns lit torches when next to them; Cannot push torches)
+
+(Ice Marble Mechanics:)
+(Advantage - Can collect Ice Cream)
+(Disadvantage - Puts out lit torches; Restricts movement)
+
+(Furnace Mechanics:)
+(Advantage - )
+(Disadvantage - Burns torches)
+
+(Freezer Mechanics:)
+(Advantage - Torches can move through)
+(Disadvantage - Puts out lit torches)
+
+(Prisoner Mechanics:)
+(Advantage - Can push torches without consequence)
+(Disadvantage - Cannot enter furnace/freezer)
+
+(TEST)
+
+
+(Throne Room Intro)
+(Target is goal)
+
+3c"crrrc:c2
+3r"rqwar:r2
+3c"rszxr:c2
+3r"euhne:r2
+3c+'rrr?_c2
+74e+'{?_e56
+k74e+;_e56k
+#k74rrr56k#
+##k71116k##
+###k...k###
+####kmk####
+
+message Steele... We're having a party tonight in Castle Marbletopia
+message As my personal butler I'm tasking you with warming up the castle
+message Please don't burn anything
+
+(Torch Light)
+(Torches light other torches)
+##########
+###t....o#
+#....#.###
+#..#.#..t#
+##......##
+##.#t##..#
+#.l###t..#
+#m.###...#
+##########
+
+(Fire Spread)
+(Toches can light a whole chain)
+##########
+#..tt.t.t#
+#..##t#t##
+#ml.....o#
+#..#######
+##########
+
+message The Royal Forge .. Where King Aurum creates his subjects... and slaves
+message Better be careful not to burn anything... or melt... or freeze
+message Fortunately I was forged with stronger stuff!
+
+(Working the Forge)
+(Intro to Furnace and Freezer, Fire Marble can light torches)
+###########
+#t.i.#.ffo#
+##.#.#.####
+##.#.#...t#
+#t.f...####
+####.#.i.t#
+#i...f.#.##
+#m#l##...##
+###########
+
+(Cooling Off)
+(Fire Marble burns lit torches, you can enter/exit a furnace/freezer the same way)
+#########
+###tttt##
+#imf...o#
+###tttt##
+#########
+
+(Careful in the Forge)
+(Fire Marble in the furnace can light torches)
+##########
+##.t....o#
+##...#####
+##.#.##.t#
+#..#....##
+#.##t##.##
+#.f.....##
+#m####t###
+##########
+
+(Don't Freeze)
+(You can push torches through freezers)
+##########
+#..ti..###
+#.#.##.###
+#...##.###
+#.#l##to##
+#.......m#
+##########
+
+(Fire and Ice)
+(Torches burn in the furnace)
+##########
+#..t...l##
+#..#.tt###
+#..#t..im#
+#t.f..##.#
+#..#####o#
+##########
+
+(How Inconvenient)
+(Advanced understanding)
+############
+##......ffo#
+##.l..l.####
+####..######
+####.l##...#
+##.l.....l.#
+######l#.#.#
+####l###.#.#
+####.l.#.#t#
+#.i....#.###
+#m####...l.#
+############
+
+message Steele!
+message Bring me my Ice Cream!
+message Make sure it hasn't melted!
+
+(I Scream for Ice Cream)
+(Only Ice marble can pick up ice cream, Fire Marble melts ice cream when next to it, Standard Marble melts ice cream when on it)
+###########
+#.#.....#.#
+#.#.....#.#
+#mf..d..io#
+#.#.....#.#
+#.#.....#.#
+###########
+
+(Ice Cream Maze)
+(Aoiding ice cream as Fire Marble)
+###############
+####........###
+###........d#t#
+#....d......f.#
+#.#......d..#.#
+#.#d........#.#
+#.##...d....#.#
+#iid..........#
+#l#m......d.#o#
+###############
+
+(Protect the Torch)
+(Lit torches melt ice cream when next to it)
+############
+###t.......#
+###.d.....i#
+######..d###
+#t#....t..##
+#t........d#
+##f#d#d.t..#
+##m####...t#
+##o#########
+############
+
+(Break the Chain)
+(Breaking and reconnecting the chain)
+#############
+###....###.i#
+###.t......##
+#ttt.llll#..#
+#t##.#.#l##.#
+#t#..#..lll.#
+#t#..##..##.#
+#t#d.###...m#
+#ttt#######o#
+#############
+
+message I hate the dungeon... King Aurum's slaves are kept here
+message I guess I should make sure they're all in their cells
+
+(Back to your cells)
+(Sokoban, Colour must match colour)
+##########
+#.......*#
+#&#.##g###
+#.#..#...#
+#.b......#
+#.#.##y#.#
+#.m.%..#o#
+##########
+
+(Rearrange)
+(Sokoban)
+##########
+###..#####
+#.....####
+#o.gyb*&%#
+###.m.####
+####..####
+##########
+
+(Cornered)
+(Sokoban)
+#########
+#i......#
+##.####.#
+#..g..%.#
+#..###*##
+#..#.d.##
+#..&.by##
+#..#.mo##
+#########
+
+message Their material isn't as sturdy as mine
+message Best be careful... but maybe they can help me...
+
+(Escort Quest)
+(Prisoners cannot enter freezers)
+##########
+#o.####t##
+#..d...%.#
+##.##.##.#
+##..i.l..#
+##..#..g.#
+#####...m#
+##########
+
+(Help Me Friend)
+(Using Prisoners to move torches when you otherwise cannot do so alone)
+#########
+##..#####
+#.......#
+#....d$.#
+#...l...#
+#i#d.@..#
+#m##..o.#
+#########
+
+(Keep Them Alive)
+(Releasing prisoners and bringing them back)
+#############
+###...d.#####
+#o!.........#
+#.#......##.#
+#.#.....l.$.#
+#.@.....#####
+#.#.....i..t#
+#..d....#.l##
+#ft##########
+#mt##########
+#############
+
+(Deja Vu)
+(Prisoners cannot enter furnaces)
+##########
+#.......*#
+#&#i##g###
+#.#f.#.i.#
+#.b....f.#
+#.#.##y#.#
+#.m.%..#o#
+##########
+
+(Protect the Torch)
+(Torch can only be moved by prisoners)
+###########
+##t#o.....#
+##.#...f..#
+#t*##y..&.#
+##..f...#.#
+#..f......#
+#....%.l#.#
+#.........#
+#.b#f..g#f#
+#.......#m#
+###########
+
+(Finale)
+(Keep at least 1 flame alive)
+#################
+#mi...l#.#..#..&#
+###.l.........l.#
+#d####......#...#
+#.l#.l.#.##.#.#.#
+#..#.....##...#.#
+#..#####.##...#.#
+#..##l...##.y.#.#
+#...d..l.....l#.#
+#...#....##...#o#
+#################
+
+message I have been summoned by His Majesty
+
+(Throne Room Outro)
+(King is not happy with you rearranging torches & using his slaves)
+3c"crrrc:c2
+3r"rqwar:r2
+3c"eszxe:c2
+3r"euhne:r2
+3c+'ere?_c2
+74r+'{?_r56
+k74r+;_r56k
+#k74rrr56k#
+##k71116k##
+###k...k###
+####kmk####
+
+message You are in violation of several of my castle rules:
+message 1. Creating dark areas in the castle by moving torches from their original places
+message 2. Attempting to poison me by giving me Ice Cream off the floor
+message 3. Unauthorised usage of my slaves for your own purpose
+message Guards! Take him to the dungeon!
+
+(Epilogue)
+(You're in Prison)
+#####
+#$.j#
+##.##
+#!.@#
+##p##
+
+message Thanks for playing!
+message If you enjoyed it please share it :)
+
+(End screen)
+#####
+#$/\#
+##.##
+#!.@#
+##.##
+
+
+
+
